@@ -1,0 +1,65 @@
+def validar_nome(nome):
+    return len(nome) > 3
+
+def validar_idade(idade):
+    return 0 <= idade <= 150
+
+def validar_salario(salario):
+    return salario > 0
+
+def validar_sexo(sexo):
+    return sexo in ['f', 'm']
+
+def validar_estado_civil(estado_civil):
+    return estado_civil in ['s', 'c', 'v', 'd']
+
+def obter_informacoes():
+    while True:
+        nome = input("Digite seu nome: ")
+        if validar_nome(nome):
+            break
+        else:
+            print("Nome deve ter mais de 3 caracteres.")
+
+    while True:
+        try:
+            idade = int(input("Digite sua idade: "))
+            if validar_idade(idade):
+                break
+            else:
+                print("Idade deve estar entre 0 e 150.")
+        except ValueError:
+            print("Por favor, digite um número válido.")
+
+    while True:
+        try:
+            salario = float(input("Digite seu salário: "))
+            if validar_salario(salario):
+                break
+            else:
+                print("Salário deve ser maior que zero.")
+        except ValueError:
+            print("Por favor, digite um valor numérico válido.")
+
+    while True:
+        sexo = input("Digite seu sexo (f/m): ").lower()
+        if validar_sexo(sexo):
+            break
+        else:
+            print("Sexo deve ser 'f' ou 'm'.")
+
+    while True:
+        estado_civil = input("Digite seu estado civil (s/c/v/d): ").lower()
+        if validar_estado_civil(estado_civil):
+            break
+        else:
+            print("Estado civil deve ser 's', 'c', 'v' ou 'd'.")
+
+    print("\nInformações válidas:")
+    print(f"Nome: {nome}")
+    print(f"Idade: {idade}")
+    print(f"Salário: {salario}")
+    print(f"Sexo: {sexo}")
+    print(f"Estado Civil: {estado_civil}")
+
+obter_informacoes()
