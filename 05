@@ -1,0 +1,42 @@
+def obter_valor_positivo(mensagem):
+    while True:
+        try:
+            valor = float(input(mensagem))
+            if valor > 0:
+                return valor
+            else:
+                print("Valor deve ser positivo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número.")
+
+def obter_taxa(mensagem):
+    while True:
+        try:
+            taxa = float(input(mensagem))
+            if 0 <= taxa <= 100:
+                return taxa / 100
+            else:
+                print("Taxa deve estar entre 0 e 100.")
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número.")
+
+def calcular_anos(populacao_a, taxa_a, populacao_b, taxa_b):
+    anos = 0
+    while populacao_a < populacao_b:
+        populacao_a += populacao_a * taxa_a
+        populacao_b += populacao_b * taxa_b
+        anos += 1
+    return anos
+
+while True:
+    populacao_a = obter_valor_positivo("Informe a população do país A: ")
+    taxa_a = obter_taxa("Informe a taxa de crescimento anual do país A (%): ")
+    populacao_b = obter_valor_positivo("Informe a população do país B: ")
+    taxa_b = obter_taxa("Informe a taxa de crescimento anual do país B (%): ")
+
+    anos = calcular_anos(populacao_a, taxa_a, populacao_b, taxa_b)
+    print(f"Serão necessários {anos} anos para que a população do país A ultrapasse ou iguale a população do país B.")
+
+    repetir = input("Deseja realizar outra operação? (s/n): ").lower()
+    if repetir != 's':
+        break
