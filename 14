@@ -1,0 +1,14 @@
+# Inicializa os dois primeiros termos da série
+fibonacci = [0, 1]
+
+# Gera a série de Fibonacci até que o valor seja maior que 500
+while True:
+    proximo_termo = fibonacci[-1] + fibonacci[-2]
+    if proximo_termo > 500:
+        break
+    fibonacci.append(proximo_termo)
+
+# Exibe a série de Fibonacci
+print("Série de Fibonacci até que o valor seja maior que 500:")
+for termo in fibonacci:
+    print(termo)
