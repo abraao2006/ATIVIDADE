@@ -1,0 +1,11 @@
+# Solicita dois números inteiros ao usuário
+num1 = int(input("Digite o primeiro número inteiro: "))
+num2 = int(input("Digite o segundo número inteiro: "))
+
+# Verifica qual número é menor e qual é maior
+if num1 > num2:
+    num1, num2 = num2, num1
+
+# Gera e imprime os números inteiros no intervalo
+for i in range(num1 + 1, num2):
+    print(i)
