@@ -1,0 +1,10 @@
+def obter_credenciais():
+    while True:
+        usuario = input("Digite seu nome de usuário: ")
+        senha = input("Digite sua senha: ")
+        if usuario != senha:
+            return usuario, senha
+        print("Erro: A senha não deve ser igual ao nome de usuário. Tente novamente.")
+
+usuario, senha = obter_credenciais()
+print(f"Cadastro efetuado com sucesso!\nUsuário: {usuario}")
