@@ -1,0 +1,25 @@
+def eh_primo(numero):
+    if numero < 2:
+        return False, 0
+    divisores = 0
+    for i in range(2, int(numero ** 0.5) + 1):
+        divisores += 1
+        if numero % i == 0:
+            return False, divisores
+    return True, divisores
+
+def primos_ate_n(n):
+    primos = []
+    total_divisoes = 0
+    for num in range(1, n + 1):
+        primo, divisoes = eh_primo(num)
+        total_divisoes += divisoes
+        if primo:
+            primos.append(num)
+    return primos, total_divisoes
+
+n = int(input("Digite um número inteiro N: "))
+primos, total_divisoes = primos_ate_n(n)
+
+print(f"Números primos entre 1 e {n}: {primos}")
+print(f"Número total de divisões executadas: {total_divisoes}")
