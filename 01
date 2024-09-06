@@ -1,0 +1,13 @@
+def obter_nota():
+    while True:
+        try:
+            nota = float(input("Digite uma nota entre 0 e 10: "))
+            if 0 <= nota <= 10:
+                return nota
+            else:
+                print("Valor inválido. A nota deve estar entre 0 e 10.")
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número.")
+
+nota_valida = obter_nota()
+print(f"Nota válida recebida: {nota_valida}")
