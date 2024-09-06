@@ -1,0 +1,13 @@
+# Solicita ao usuário para informar a base e o expoente
+base = int(input("Digite a base: "))
+expoente = int(input("Digite o expoente: "))
+
+# Inicializa o resultado como 1 (elemento neutro da multiplicação)
+resultado = 1
+
+# Multiplica a base por ela mesma expoente vezes
+for _ in range(expoente):
+    resultado *= base
+
+# Exibe o resultado
+print(f"{base} elevado a {expoente} é igual a {resultado}")
