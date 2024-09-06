@@ -1,0 +1,18 @@
+# Solicita dois números inteiros ao usuário
+num1 = int(input("Digite o primeiro número inteiro: "))
+num2 = int(input("Digite o segundo número inteiro: "))
+
+# Verifica qual número é menor e qual é maior
+if num1 > num2:
+    num1, num2 = num2, num1
+
+# Inicializa a soma
+soma = 0
+
+# Gera e imprime os números inteiros no intervalo, acumulando a soma
+for i in range(num1 + 1, num2):
+    print(i)
+    soma += i
+
+# Exibe a soma dos números no intervalo
+print(f"Soma dos números no intervalo: {soma}")
