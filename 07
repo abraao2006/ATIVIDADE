@@ -1,0 +1,14 @@
+# Inicializa a soma
+soma = 0
+
+# Lê 5 números do usuário e adiciona à soma
+for i in range(5):
+    numero = float(input(f"Digite o {i+1}º número: "))
+    soma += numero
+
+# Calcula a média
+media = soma / 5
+
+# Exibe a soma e a média
+print(f"Soma: {soma}")
+print(f"Média: {media}")
