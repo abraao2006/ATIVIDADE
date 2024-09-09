@@ -1,0 +1,12 @@
+def calcular_valores(numeros):
+    menor_valor = min(numeros)
+    maior_valor = max(numeros)
+    soma_valores = sum(numeros)
+    return menor_valor, maior_valor, soma_valores
+
+# Exemplo de uso
+numeros = [int(x) for x in input("Digite os números separados por espaço: ").split()]
+menor, maior, soma = calcular_valores(numeros)
+print(f"Menor valor: {menor}")
+print(f"Maior valor: {maior}")
+print(f"Soma dos valores: {soma}")
